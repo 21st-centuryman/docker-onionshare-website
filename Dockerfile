@@ -9,5 +9,5 @@ RUN pipx install onionshare-cli==$ONIONSHARE_VERSION
 
 VOLUME ["/shared"]
 
-ENTRYPOINT ["/usr/local/bin/onionshare-cli"]
+ENTRYPOINT ["/usr/local/bin/onionshare-cli", "--public", "--website"]
 CMD ["/shared"]
