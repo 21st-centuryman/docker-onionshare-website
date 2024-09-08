@@ -1,11 +1,10 @@
 FROM alpine:latest
 
-ENV ONIONSHARE_VERSION=2.6.1
 ENV PIPX_BIN_DIR=/usr/local/bin
 
-RUN apk update && apk add --no-cache tor pipx
+RUN apk update && apk add --no-cache tor pipx gcc linux-headers python3-dev musl-dev
 
-RUN pipx install onionshare-cli==$ONIONSHARE_VERSION
+RUN pipx install onionshare-cli
 
 VOLUME ["/shared"]
 
